@@ -1,83 +1,5 @@
-class Solution {
-    public int compress(char[] chars) {
-
-        int n = chars.length;
-        int idx = 0;
-        int i = 0;
-
-        while (i < n) {
-
-            char ch = chars[i];
-            int count = 0;
-
-            while (i < n && chars[i] == ch) {
-                count++;
-                i++;          // IMPORTANT
-            }
-
-            chars[idx++] = ch;
-
-            if (count > 1) {
-
-                String str = Integer.toString(count);
-
-                for (char digit : str.toCharArray()) {
-                    chars[idx++] = digit;
-                }
-            }
-        }
-
-        return idx;
-    }
-}
-
-
-// leetcode 1446
-
-class Solution {
-    public int maxPower(String s) {
-        // so basically isme hume jya krna h ki - string me jis bhi char ka sabse jada occurence aaya hai wo occurence kitni bar aaya h wo return krdenge bas yehi krna hai 
-
-        int n = s.length();
-        int i = 0;
-        int maxcount = Integer.MIN_VALUE;
-        while(i < n){
-            char ch = s.charAt(i);
-            int count = 0;
-            while(i<n && s.charAt(i) == ch){
-                count++;
-                i++;
-            }
-            // ab jaise hi count khatam hogi me check krunga ki wo maxcount h ya fir nahi ? 
-            if(count > maxcount){
-                maxcount = count;
-            }
-        }
-        return maxcount;
-    }
-}
-
-
-leetcode 674
-
-class Solution {
-    public int findLengthOfLCIS(int[] nums) {
-        // hume longest len return krni h increasing subsequence ki 
-        int longestlen = 1;
-        int currlen = 1;
-        for(int i= 1; i<nums.length; i++){
-            if(nums[i] > nums[i-1]){
-                currlen++;
-            }
-            else{
-                currlen = 1;
-            }
-            longestlen = Math.max(longestlen, currlen);
-        }
-        return longestlen;
-    }
-}permutation in string 
-class Solution {
+permutation in string 
+class PermutationInStringDuplicate {
     public boolean checkInclusion(String s1, String s2) {
         // isme s1 ko dhoonda h inside the s2
         // s1 ki permutations inside the s2 to gve the ans 
@@ -112,7 +34,7 @@ class Solution {
         }
         return true;
     }
-}class Solution {
+}class PermutationInStringDuplicate {
     public boolean isPalindrome(String s) {
         // isme pehle check krenge ki char is alphanumeric or not ? 
         // if its alphanumeric then check it and if not them skip it bcox we have to check for the alpha numeric only 
@@ -149,7 +71,7 @@ class Solution {
 
 // remove all occurence
 
-class Solution {
+class PermutationInStringDuplicate {
     public String removeOccurrences(String s, String part) {
         while(s.contains(part)){
             // means jab tk part is inside the s jabtk we have to run the loop
@@ -169,7 +91,7 @@ class Solution {
 
 // pallindrome 2
 
-class Solution {
+class PermutationInStringDuplicate {
     public boolean validPalindrome(String s) {
         // deho sabse pehle palindrom wo hota h jisko chahe seedha pado ya ulta same hi milega 
         // 2ptr approch me left and rught rakho 
@@ -202,7 +124,7 @@ class Solution {
 
 
 permutation in string 
-class Solution {
+class PermutationInStringDuplicate {
     public boolean checkInclusion(String s1, String s2) {
         // isme s1 ko dhoonda h inside the s2
         // s1 ki permutations inside the s2 to gve the ans 
@@ -236,27 +158,5 @@ class Solution {
             }
         }
         return true;
-    }
-}
-
-
-
-class Solution {
-    public String reverseWords(String s) {
-        String[] result = s.trim().split("\\s+");
-        // trim() basically starting and ending se space hatadeta h naaki beech me se
-        // split("\\s+")
-        // ue str ko spacess ke base pr tod deta h 
-        // ab result me kuch aisa aagaya hai - 
-        // ["the", "sky","is","blue"];
-
-        String ans = "";
-        for(int i= result.length-1; i>=0; i--){
-            ans += result[i];
-            if(i!=0){
-                ans +=" ";
-            }
-        }
-        return ans.trim();
     }
 }

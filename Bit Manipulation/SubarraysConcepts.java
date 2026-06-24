@@ -1,33 +1,3 @@
-class Solution {
-    public boolean isPowerOfThree(int n) {
-        // power of 3 ka koi rule nahi h jaise power of 2 me tha ki like power of 2 me hmesha binary me 1bit hona chaiye and jaise hi hum n& (n-1) krenge to wo zero de dega 
-        // a numher if the power oof 3 if we divide the number again and again by 3 until it becomes 1 
-        if(n<=0){
-            return false;
-        }
-        while(n % 3 == 0){
-            n =  n / 3;
-        }
-        return  n == 1;
-    }
-}
-
-
-
-class Solution {
-    public boolean isPowerOfTwo(int n) {
-        // here the concept of the xor is used 
-        // the power of two always have th laast bit as 1 only 1times
-        if(n<=0){
-            return false;
-        }
-        return (n & (n-1)) == 0;
-    }
-}
-
-
-
-
 // subarrays below 
 
 
@@ -63,7 +33,7 @@ class Solution {
 
 // printing the subarrays of array - 
 
-// public class Problem_Bits_0{
+// public class SubarraysConcepts{
 //     public static void main(String[] args){
 //         int[] arr = {1,2,3,4};
 //         int n = arr.length;
@@ -80,7 +50,7 @@ class Solution {
 // }
 
 // printing the sum of thr subarrays - 
-// public class Problem_Bits_0{
+// public class SubarraysConcepts{
 //     public static void main(String[] args){
 //         int[] arr = {1,2,3,4};
 //         int n  = arr.length;
@@ -100,7 +70,7 @@ class Solution {
 
 // counting the number o th subarrays in the array
 
-// public class Problem_Bits_0{
+// public class SubarraysConcepts{
 //     public static void main(String[] args){
 //         int [] arr = {1,2,3,4};
 //         int n = arr.length;
@@ -118,7 +88,7 @@ class Solution {
 
 // Find Maximum Sum Among All Subarrays
 
-// public class Problem_Bits_0{
+// public class SubarraysConcepts{
 //     public static void main(String[] args){
 //         int[] arr = {1,2,3};
 //         int n = arr.length;
