@@ -19,3 +19,25 @@ class Solution {
         return list;
     }
 }
+
+
+
+
+// brute approch below - 
+
+public static int[] stockSpanBrute(int[] price) {
+
+    int n = price.length;
+    int[] span = new int[n];
+    for (int i = 0; i < n; i++) {
+        int count = 1;
+        for (int j = i - 1; j >= 0; j--) {
+            if (price[j] <= price[i])
+                count++;
+            else
+                break;
+        }
+        span[i] = count;
+    }
+    return span;
+}
