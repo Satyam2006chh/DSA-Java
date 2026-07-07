@@ -14,3 +14,25 @@ class MiddleNode {
         
     }
 }
+
+
+// BRUTE APPRROCH 
+
+class Solution {
+
+    public ListNode middleNode(ListNode head) {
+        int count = 0;
+        ListNode temp = head;
+        while(temp != null){
+            count++;
+            temp = temp.next;
+        }
+        int middle = count / 2;
+        temp = head;
+        while(middle > 0){
+            temp = temp.next;
+            middle--;
+        }
+        return temp;
+    }
+}
