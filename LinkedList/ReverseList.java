@@ -20,3 +20,29 @@ class ReverseList {
         
     }
 }
+
+
+
+// brute approch using the stack
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        Stack<Integer> stack = new Stack<>();
+        ListNode temp = head;
+        // Store all values
+        while (temp != null) {
+            stack.push(temp.val);
+            temp = temp.next;
+        }
+        // Replace values in reverse order
+        temp = head;
+        while (temp != null) {
+            temp.val = stack.pop();
+            temp = temp.next;
+        }
+        return head;
+    }
+}
